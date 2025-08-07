@@ -1,4 +1,4 @@
-name: Update README
+name: Update README with Repo List
 
 on:
   push:
@@ -7,20 +7,39 @@ on:
       - master
   schedule:
     # Runs every 6 hours
-    - cron: "0 */6 * * *"
+    - cron: '0 */6 * * *'
   workflow_dispatch:
 
 jobs:
-  update-readme:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: gautamkrishnar/blog-post-workflow@master
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Update README with Repo List
+        uses: varunsridharan/action-repository-list@main
         with:
-          max_post_count: "12"
-          readme_path: "./readme.md"
-          feed_list: "https://github.com/abdulrehmangulfaraz?tab=repositories"
-          template: "$newline| <a href='$url'>$title</a> |"
-          start_comment: ""
-          end_comment: ""
-          commit_message: "docs: update readme with latest projects"
+          # Your GitHub username
+          username: 'abdulrehmangulfaraz'
+          
+          # The header for the list
+          header: '### 📚 My Other Projects'
+          
+          # How to format each repository in the list
+          # Available variables: %name%, %url%, %description%, %language%, %stars%, %forks%
+          item-style: '- [%name%](%url%)'
+
+          # Maximum number of repositories to list
+          max: 12
+
+          # How to sort the repositories
+          sort_by: 'pushed'
+          sort_order: 'desc'
+          
+          # The comments in your README to place the list between
+          start: ''
+          end: ''
+          
+          # A comma-separated list of repos to exclude (your featured ones)
+          exclude: 'CodeDawn,Aqshmar,Chess-Game-MASM32'
