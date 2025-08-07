@@ -1,40 +1,54 @@
-name: Update README with public repos
+name: Maintain Contribution Streak
 
 on:
+  schedule:
+    - cron: "0 23 * * *"  # every day at 23:00 UTC
   push:
     branches:
-      - main
-  schedule:
-    - cron: "0 */6 * * *"
-  workflow_dispatch:
+      - main  # or 'master'
 
 jobs:
-  update:
+  touch-readme:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Generate repo list
+      - name: Detect today's commit activity
+        id: activity_check
         run: |
-          curl -s https://api.github.com/users/${{ github.repository_owner }}/repos?per_page=100 |
-          jq -r '.[] | select(.private == false) | "\(.pushed_at) \(.name) \(.html_url)"' |
-          sort -r |
-          cut -d' ' -f2- |
-          grep -v -E "CodeDawn|Aqshmar|Chess-Game-MASM32" |
-          awk '{printf "- [%s](%s)\n", $1, $2}' > repo_list.md
+          LAST_COMMIT_DATE=$(git log -1 --format=%cd --date=short)
+          TODAY=$(date -u +'%Y-%m-%d')
 
-      - name: Update README
+          echo "Last commit date: $LAST_COMMIT_DATE"
+          echo "Today: $TODAY"
+
+          if [ "$LAST_COMMIT_DATE" = "$TODAY" ]; then
+            echo "activity=true" >> $GITHUB_OUTPUT
+          else
+            echo "activity=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Rewrite README (no content change)
         run: |
-          awk '/<!--START_REPOS-->/ {print; system("cat repo_list.md"); next} /<!--END_REPOS-->/ {print; next}1' README.md > README.tmp
+          cp README.md README.tmp
+          rm README.md
           mv README.tmp README.md
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ "${{ steps.activity_check.outputs.activity }}" = "true" ]; then
+            COMMIT_MESSAGE="ci: auto-updated README.md after push activity"
+          else
+            COMMIT_MESSAGE="ci: auto-updated README.md (no activity detected)"
+          fi
+
           git add README.md
-          git commit -m "Update repo list in README"
+          git commit -m "$COMMIT_MESSAGE" || echo "No changes to commit"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
