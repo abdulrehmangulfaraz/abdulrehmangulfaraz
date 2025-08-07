@@ -3,9 +3,9 @@ name: Maintain Contribution Streak
 on:
   push:
     branches:
-      - main  # change to 'master' if that's your default
+      - main  # Change to master if needed
   schedule:
-    - cron: "0 23 * * *"  # every day at 23:00 UTC
+    - cron: "0 23 * * *"  # Every day at 23:00 UTC
   workflow_dispatch:
 
 jobs:
@@ -51,9 +51,13 @@ jobs:
           fi
 
           git add README.md
-          git diff --cached --quiet && echo "No changes to commit" && exit 0
 
-          git commit -m "$COMMIT_MESSAGE"
-          git push origin HEAD:main
+          # Check if anything changed before trying to commit
+          if git diff --cached --quiet; then
+            echo "✅ No changes to commit"
+          else
+            git commit -m "$COMMIT_MESSAGE"
+            git push origin HEAD:main
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
