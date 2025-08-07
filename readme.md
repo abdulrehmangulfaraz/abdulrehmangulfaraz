@@ -287,6 +287,8 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
 <summary><b>🔎 Explore More Projects</b></summary>
 <br>
 
+</details>
+
 <!-- 📚 Project Grid -->
 <div align="center">
 

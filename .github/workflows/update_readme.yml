@@ -1,0 +1,26 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    # Runs every 6 hours
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gautamkrishnar/blog-post-workflow@master
+        with:
+          max_post_count: "12"
+          readme_path: "./readme.md"
+          feed_list: "https://github.com/abdulrehmangulfaraz?tab=repositories"
+          template: "$newline| <a href='$url'>$title</a> |"
+          start_comment: ""
+          end_comment: ""
+          commit_message: "docs: update readme with latest projects"
