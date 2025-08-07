@@ -424,8 +424,8 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
 <details>
 <summary><h2>🌟 Quote of the Day</h2></summary>
   <div align="center" >
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border=true" alt="Random Dev Quote"/>
-  <br>
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight&border=true" alt="Random Dev Quote"/>  <br>  <br>
+
   </div>
 </details>
 
