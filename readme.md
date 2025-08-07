@@ -399,7 +399,7 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
     <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdulrehmangulfaraz&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&cache_seconds=60"/>
   </p>
   <p>
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=abdulrehmangulfaraz&theme=tokyonight&hide_border=true&background=0d1117&stroke=58a6ff&ring=1f6feb&fire=58a6ff&currStreakLabel=58a6ff&cache_seconds=60" alt="GitHub Streak"/>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=abdulrehmangulfaraz&theme=tokyonight&hide_border=true&background=0d1117&stroke=58a6ff&ring=1f6feb&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak"/>
   </p>
 </div>
 </details>
