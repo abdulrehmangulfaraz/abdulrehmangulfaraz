@@ -11,35 +11,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  update-readme:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: Update README with Repo List
-        uses: varunsridharan/action-repository-list@main
+      - uses: actions/checkout@v3
+      - name: Update README
+        uses: athul/guzaarish@v1
         with:
-          # Your GitHub username
-          username: 'abdulrehmangulfaraz'
+          # Your GitHub token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
-          # The header for the list
-          header: '### 📚 My Other Projects'
-          
-          # How to format each repository in the list
-          # Available variables: %name%, %url%, %description%, %language%, %stars%, %forks%
-          item-style: '- [%name%](%url%)'
-
-          # Maximum number of repositories to list
-          max: 12
-
-          # How to sort the repositories
-          sort_by: 'pushed'
-          sort_order: 'desc'
-          
-          # The comments in your README to place the list between
-          start: ''
-          end: ''
-          
-          # A comma-separated list of repos to exclude (your featured ones)
-          exclude: 'CodeDawn,Aqshmar,Chess-Game-MASM32'
+          # Repositories to exclude (your featured ones)
+          EXCLUDE: "CodeDawn,Aqshmar,Chess-Game-MASM32"
