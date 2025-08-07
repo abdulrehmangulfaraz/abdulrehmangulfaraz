@@ -1,25 +1,40 @@
-name: Update README with Repo List
+name: Update README with public repos
 
 on:
   push:
     branches:
       - main
-      - master
   schedule:
-    # Runs every 6 hours
-    - cron: '0 */6 * * *'
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 jobs:
-  update-readme:
+  update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Generate repo list
+        run: |
+          curl -s https://api.github.com/users/${{ github.repository_owner }}/repos?per_page=100 |
+          jq -r '.[] | select(.private == false) | "\(.pushed_at) \(.name) \(.html_url)"' |
+          sort -r |
+          cut -d' ' -f2- |
+          grep -v -E "CodeDawn|Aqshmar|Chess-Game-MASM32" |
+          awk '{printf "- [%s](%s)\n", $1, $2}' > repo_list.md
+
       - name: Update README
-        uses: athul/guzaarish@v1
-        with:
-          # Your GitHub token
+        run: |
+          awk '/<!--START_REPOS-->/ {print; system("cat repo_list.md"); next} /<!--END_REPOS-->/ {print; next}1' README.md > README.tmp
+          mv README.tmp README.md
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update repo list in README"
+          git push
+        env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
-          # Repositories to exclude (your featured ones)
-          EXCLUDE: "CodeDawn,Aqshmar,Chess-Game-MASM32"

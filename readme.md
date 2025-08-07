@@ -287,7 +287,12 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
 <summary><b>🔎 Explore More Projects</b></summary>
 <br>
 
+<!--START_REPOS-->
+<!-- The list of repos will be inserted here -->
+<!--END_REPOS-->
+
 </details>
+
 
 <!-- 📚 Project Grid -->
 <div align="center">
