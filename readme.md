@@ -271,15 +271,16 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
 <!-- 🌟 Top 3 Featured Projects -->
 <div align="center">
   <a href="https://github.com/abdulrehmangulfaraz/CodeDawn">
-    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=CodeDawn&theme=radical&show_owner=true" />
+    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=CodeDawn&theme=radical&show_owner=true&cache_seconds=60" />
   </a>
   <a href="https://github.com/abdulrehmangulfaraz/Aqshmar">
-    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=Aqshmar&theme=merko&show_owner=true" />
+    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=Aqshmar&theme=merko&show_owner=true&cache_seconds=60" />
   </a>
   <a href="https://github.com/abdulrehmangulfaraz/Chess-Game-MASM32">
-    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=Chess-Game-MASM32&theme=gruvbox&show_owner=true" />
+    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=Chess-Game-MASM32&theme=gruvbox&show_owner=true&cache_seconds=60" />
   </a>
 </div>
+
 
 <br>
  
@@ -394,11 +395,11 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
 
 <div align="center">
   <p>
-    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=abdulrehmangulfaraz&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9"/>
-    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdulrehmangulfaraz&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9"/>
+    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=abdulrehmangulfaraz&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=1f6feb&text_color=c9d1d9&cache_seconds=60"/>
+    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=abdulrehmangulfaraz&layout=compact&langs_count=8&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&cache_seconds=60"/>
   </p>
   <p>
-    <img src="https://github-readme-streak-stats.herokuapp.com/?user=abdulrehmangulfaraz&theme=tokyonight&hide_border=true&background=0d1117&stroke=58a6ff&ring=1f6feb&fire=58a6ff&currStreakLabel=58a6ff" alt="GitHub Streak"/>
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=abdulrehmangulfaraz&theme=tokyonight&hide_border=true&background=0d1117&stroke=58a6ff&ring=1f6feb&fire=58a6ff&currStreakLabel=58a6ff&cache_seconds=60" alt="GitHub Streak"/>
   </p>
 </div>
 </details>
