@@ -1,11 +1,12 @@
 name: Maintain Contribution Streak
 
 on:
-  schedule:
-    - cron: "0 23 * * *"  # every day at 23:00 UTC
   push:
     branches:
-      - main  # or 'master'
+      - main  # change to 'master' if needed
+  schedule:
+    - cron: "0 23 * * *"  # every day at 23:00 UTC
+  workflow_dispatch:
 
 jobs:
   touch-readme:
@@ -25,30 +26,30 @@ jobs:
           echo "Today: $TODAY"
 
           if [ "$LAST_COMMIT_DATE" = "$TODAY" ]; then
-            echo "activity=true" >> $GITHUB_OUTPUT
+            echo "activity=true" >> $GITHUB_ENV
           else
-            echo "activity=false" >> $GITHUB_OUTPUT
+            echo "activity=false" >> $GITHUB_ENV
           fi
 
-      - name: Rewrite README (no content change)
+      - name: Rewrite readme.md (no real change)
         run: |
-          cp README.md README.tmp
-          rm README.md
-          mv README.tmp README.md
+          cp readme.md readme.tmp && mv readme.tmp readme.md
 
       - name: Commit and push
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if [ "${{ steps.activity_check.outputs.activity }}" = "true" ]; then
-            COMMIT_MESSAGE="ci: auto-updated README.md after push activity"
+          if [ "$activity" = "true" ]; then
+            COMMIT_MESSAGE="ci: auto-updated readme.md after push activity"
           else
-            COMMIT_MESSAGE="ci: auto-updated README.md (no activity detected)"
+            COMMIT_MESSAGE="ci: auto-updated readme.md (no activity detected)"
           fi
 
-          git add README.md
+          git add readme.md
           git commit -m "$COMMIT_MESSAGE" || echo "No changes to commit"
+
+          git pull --rebase
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
