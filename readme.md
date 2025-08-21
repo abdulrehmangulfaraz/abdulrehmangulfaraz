@@ -270,14 +270,14 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
 
 <!-- 🌟 Top 3 Featured Projects -->
 <div align="center">
+  <a href="https://github.com/abdulrehmangulfaraz/Chess-Game-MASM32">
+    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=Cover-Crest&theme=gruvbox&show_owner=true&cache_seconds=60" />
+  </a>
   <a href="https://github.com/abdulrehmangulfaraz/CodeDawn">
     <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=CodeDawn&theme=radical&show_owner=true&cache_seconds=60" />
   </a>
   <a href="https://github.com/abdulrehmangulfaraz/Aqshmar">
     <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=Aqshmar&theme=merko&show_owner=true&cache_seconds=60" />
-  </a>
-  <a href="https://github.com/abdulrehmangulfaraz/Chess-Game-MASM32">
-    <img height="160px" src="https://github-readme-stats.vercel.app/api/pin/?username=abdulrehmangulfaraz&repo=Chess-Game-MASM32&theme=gruvbox&show_owner=true&cache_seconds=60" />
   </a>
 </div>
 
@@ -322,8 +322,8 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/abdulrehmangulfaraz/SGR-1.0">
-        <img src="https://custom-icon-badges.demolab.com/badge/-SGR%201.0-ff5555?style=for-the-badge&logo=shield-check&logoColor=white"/>
+      <a href="https://github.com/abdulrehmangulfaraz/SCR-1.0">
+        <img src="https://custom-icon-badges.demolab.com/badge/-SCR%201.0-ff5555?style=for-the-badge&logo=shield-check&logoColor=white"/>
         <br/>
       </a>
     </td>
@@ -349,8 +349,8 @@ If you’ve come this far, welcome to my space. Let’s make something timeless.
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/abdulrehmangulfaraz/LehrK">
-        <img src="https://custom-icon-badges.demolab.com/badge/-LehrK!-fcc419?style=for-the-badge&logo=graduation-cap&logoColor=black"/>
+      <a href="https://github.com/abdulrehmangulfaraz/LehrKI">
+        <img src="https://custom-icon-badges.demolab.com/badge/-LehrKI!-fcc419?style=for-the-badge&logo=graduation-cap&logoColor=black"/>
         <br/>
       </a>
     </td>
