@@ -16,7 +16,8 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=abdulrehmangulfaraz&label=Profile%20views&color=green&style=for-the-badge)
   ![GitHub followers](https://img.shields.io/github/followers/abdulrehmangulfaraz?logo=github&style=for-the-badge&color=1722162)
-  <a href="https://git.io/streak-stats"><img src="https://github-readme-streak-stats.herokuapp.com?user=abdulrehmangulfaraz&theme=transparent&hide_border=true" alt="GitHub Streak" /></a>
+  [![GitHub Streak](https://streak-stats.demolab.com/?user=abdulrehmangulfaraz&theme=transparent&hide_border=true)](https://git.io/streak-stats)
+
   
 </p>
 
