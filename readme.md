@@ -16,7 +16,7 @@
 
 ![Profile Views](https://komarev.com/ghpvc/?username=abdulrehmangulfaraz&label=Profile%20views&color=green&style=for-the-badge)
   ![GitHub followers](https://img.shields.io/github/followers/abdulrehmangulfaraz?logo=github&style=for-the-badge&color=1722162)
-  [![GitHub Streak](https://streak-stats.demolab.com/?user=abdulrehmangulfaraz&theme=transparent&hide_border=true)](https://git.io/streak-stats)
+  ![GitHub User's stars](https://img.shields.io/github/stars/abdulrehmangulfaraz?affiliations=OWNER%2CCOLLABORATOR&logo=github&style=for-the-badge&color=1722162)
 
   
 </p>
